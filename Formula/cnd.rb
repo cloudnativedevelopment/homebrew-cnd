@@ -7,7 +7,7 @@ class Cnd < Formula
 
     def install
         bin.install "cnd-darwin-amd64"
-        mv bin/"cnd-darwin-amd64" "cnd"
+        mv bin/"cnd-darwin-amd64", bin/"cnd"
     end
 
     # Homebrew requires tests.
