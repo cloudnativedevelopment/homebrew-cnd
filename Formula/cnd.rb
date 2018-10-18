@@ -1,20 +1,13 @@
 class Cnd < Formula
     desc "CLI for cloud native development"
     homepage "https://github.com/okteto/cnd"
-    url "https://github.com/okteto/cnd/archive/0.1.0.tar.gz"
-    sha256 "edb31ebac68d15541d15bc8fa0b1307b5f3e5c5cfd2a54f1c69ca45f1d880339"
-    head "https://github.com/okteto/cnd.git"
-
-    depends_on "go" => :build
+    url "https://github.com/okteto/cnd/releases/download/0.1.0/cnd-darwin-amd64"
+    sha256 "e7808ef76afcba28e1a21142be83abf41935f24bf658c6176d6603ae82d27fe6"
+    version "0.1.0"
 
     def install
-        ENV["GOPATH"] = buildpath
-
-        bin_path = buildpath/"src/github.com/okteto/cnd"
-        bin_path.install Dir["*"]
-        cd bin_path do
-            system "go", "build", "-ldflags", "-X github.com/okteto/cnd/cmd.VersionString=0.1.0", "-o", bin/"cnd", "."
-        end
+        bin.install "cnd-darwin-amd64"
+        mv bin/"cnd-darwin-amd64", bin/"cnd"
     end
 
     # Homebrew requires tests.
