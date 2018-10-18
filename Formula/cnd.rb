@@ -4,6 +4,7 @@ class Cnd < Formula
     url "https://github.com/okteto/cnd/releases/download/0.1.0/cnd-darwin-amd64"
     sha256 "e7808ef76afcba28e1a21142be83abf41935f24bf658c6176d6603ae82d27fe6"
     version "0.1.0"
+    depends_on "syncthing"
 
     def install
         bin.install "cnd-darwin-amd64"
