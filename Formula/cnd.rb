@@ -3,7 +3,7 @@ class Cnd < Formula
     homepage "https://github.com/okteto/cnd"
     url "https://github.com/okteto/cnd/releases/download/0.1.1/cnd-darwin-amd64"
     sha256 "f3a8f3e705e734633c2c0c06bd09fc1628503d384868525313cec933460146bd"
-    version "0.1.0"
+    version "0.1.1"
     depends_on "syncthing"
 
     def install
