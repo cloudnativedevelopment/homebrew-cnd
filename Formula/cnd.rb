@@ -1,9 +1,10 @@
 class Cnd < Formula
     desc "CLI for cloud native development"
     homepage "https://github.com/okteto/cnd"
-    url "https://github.com/okteto/cnd/releases/download/0.2.0/cnd-darwin-amd64"
-    sha256 "ad078f0b19c4d5ac48269559c14372c9f8643ccc7604a5502308d839d7259785"
     version "0.2.0"
+    url "https://github.com/okteto/cnd/releases/download/#{version}/cnd-darwin-amd64"
+    sha256 "ad078f0b19c4d5ac48269559c14372c9f8643ccc7604a5502308d839d7259785"
+    
     depends_on "syncthing"
 
     def install
@@ -13,6 +14,6 @@ class Cnd < Formula
 
     # Homebrew requires tests.
     test do
-        assert_match "cnd version 0.2.0", shell_output("#{bin}/cnd version 2>&1", 0)
+        assert_match "cnd version #{version}", shell_output("#{bin}/cnd version 2>&1", 0)
     end
 end
