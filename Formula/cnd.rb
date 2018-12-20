@@ -1,9 +1,9 @@
 class Cnd < Formula
     desc "CLI for cloud native development"
     homepage "https://github.com/okteto/cnd"
-    version "0.3.3"
+    version "0.3.4"
     url "https://github.com/okteto/cnd/releases/download/#{version}/cnd-darwin-amd64"
-    sha256 "c1c5d9f5ffa462c994d6f01e4bdae926fc524d6d5b21f8487c788eafd649bb24"
+    sha256 "9b0cd030b8220d6ba79356cf17adbd7eb560f806829dd0b40b861bc0b6e5b721"
     
     depends_on "syncthing"
 
