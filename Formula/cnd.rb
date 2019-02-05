@@ -1,20 +1,19 @@
 class Cnd < Formula
     desc "CLI for cloud native development"
-    homepage "https://github.com/okteto/cnd"
-    url "https://github.com/okteto/cnd.git",
-      :tag      => "0.4.4",
-      :revision => "3a511be575b17dbd1c3093b23d492d351c4e17d9"
-    head "https://github.com/okteto/cnd.git"
+    homepage "https://github.com/cloudnativedevelopment/cnd"
+    url "https://github.com/cloudnativedevelopment/cnd.git",
+      :tag      => "0.4.5",
+      :revision => "65b331aad6f858a7ea6ceae3daa286c47d710bc7"
+    head "https://github.com/cloudnativedevelopment/cnd.git"
 
-    depends_on "syncthing"
     depends_on "go" => :build
 
     def install
       ENV["GOPATH"] = buildpath
-      ENV["VERSION_STRING"] = "0.4.4"
+      ENV["VERSION_STRING"] = "0.4.5"
       contents = Dir["{*,.git,.gitignore}"]
-      (buildpath/"src/github.com/okteto/cnd").install contents
-      cd "src/github.com/okteto/cnd" do
+      (buildpath/"src/github.com/cloudnativedevelopment/cnd").install contents
+      cd "src/github.com/cloudnativedevelopment/cnd" do
         system "make"
         bin.install "bin/cnd"
       end
